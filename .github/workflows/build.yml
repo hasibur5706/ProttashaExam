@@ -34,6 +34,9 @@ jobs:
 
       - name: Build debug APK
         working-directory: project/ProttashaExam
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: gradle assembleDebug --no-daemon
 
       - name: Upload APK
